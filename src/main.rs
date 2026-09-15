@@ -1,11 +1,10 @@
 use axum::{
-    extract::json,
+    extract::Json,
     http::StatusCode,
     responce::{IntoResponse, Response},
-    roting::{get, post},
+    routing::{get, post},
     Router,
 };
-
 use serde::Deserialize;
 use serde_json::{json, Value};
 use std::net::SocketAddr;
