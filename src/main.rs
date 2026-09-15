@@ -29,7 +29,7 @@ async fn health() -> &'static str{
     "OK"
 }
 
-async fn mcp_sse_stub() -> impl Intorespobnse{
+async fn mcp_sse_stub() -> impl IntoResponse{
     (
         StatusCode::OK,
         [("content-type", "text/event-stream")],
