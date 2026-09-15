@@ -1,7 +1,7 @@
 use axum::{
     extract::Json,
     http::StatusCode,
-    responce::{IntoResponse, Response},
+    response::{IntoResponse, Response},
     routing::{get, post},
     Router,
 };
@@ -12,7 +12,7 @@ use tracing::info;
 
 
 #[tokio::main]
-fn main() {
+async fn main() {
     tracing_subscriber::fmt().with_max_level(tracing::Level::INFO).init();
     let app = Router::new()
         .route("/health", get(health))
