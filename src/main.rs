@@ -20,7 +20,7 @@ async fn main() {
         .route("/test/mcp", get(mcp_sse_stub));
     let addr = SocketAddr::from([0,0,0,0], 5000);
     info!("MCP serv listening on {}", addr);
-    let listener = tokio::net::TpcListener::bind(addr).await.unwrap();
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
     axum::serve(listener, app) . await.unwrap();
            
 }
