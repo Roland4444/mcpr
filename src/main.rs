@@ -40,8 +40,8 @@ async fn mcp_sse_stub() -> impl Intorespobnse{
 #[derive(Debug, Deserialize)]
 struct JsonRpcRequest {
     #[allow(dead_code)]
-    jsonrpc: option<String>,
-    id: Option<value>,
+    jsonrpc: Option<String>,
+    id: Option<Value>,
     method: String,
     #[serde(default)]
     params: Value,
